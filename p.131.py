@@ -34,3 +34,5 @@ for num in range(0,5,1): #시작값,멈춤값,두수의차
 print("\n")
 for num1 in range(0,10,2): #2의 배수만 출력
     print(num1)
+for num1 in range(0,10,2): #2의 배수만 출력
+    print(num1)
