@@ -1,2 +1,2 @@
 # MyStudyRoom1
-study object
+이것은 테스트입니다
