@@ -11,3 +11,12 @@ def print_something(*args):
 
 ogamdo(3)
 print_something(1,2,3,4)
+print('\n')
+def scope_test():
+    global a # global 하면 지역변수의 생성을 막는다  a는 함수안에 전역변수로 사용된다
+    a = 1
+    print('a: {0}'.format(a))
+
+a=0 
+scope_test() #변수 a를 0으로 초기화 했지만 함수 호출되면 함수 a=1 실행되서 1로 출력
+print('a: {0}'.format(a))
