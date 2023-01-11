@@ -7,7 +7,7 @@ def ogamdo(num):
 def print_something(*args):
     for s in args:
         print(s)
-
+                ##함수를 중간에 종료 시킬 필요없을때는 return 생략함
 
 ogamdo(3)
 print_something(1,2,3,4)
