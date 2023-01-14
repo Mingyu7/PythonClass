@@ -8,5 +8,5 @@ while True:
     i+=1
     if i == 10:
         print("i가{}이 되었습니다 반복을 중단 합니다.".format(i))
-        break #i가 홀수일떄 반복문 중단
+        break #i가 홀수일떄 반복문 정지
     print(i)
