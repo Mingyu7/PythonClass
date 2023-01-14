@@ -1,46 +1,57 @@
-def my_abs(arg):
-    if(arg<0):
-        result = arg* -1
-    else:
-        result = arg
+def print_something(a):
+    print(a)
+p = print_something
+p(123) #함수를 변수에 담아 사용할 수 있다
+p('abc')
+
+def plus(a,b):
+    return a+b
+def minus(a,b):
+    return a-b
+
+flist = [plus,minus] ##함수를 리스트의 요소로 집어넣기
+#각각 함수 위치에서 매개변수 입력시 함수 출력
+flist[0](1,2) 
+flist[1](1,2)
+
+def hello_korean():
+    print('안녕하세요')
+def hello_english():
+    print('hello')
+def greet(hello):
+    hello()
+#함수는 다른 함수의 매개변수로 사용가능
+greet(hello_korean)
+greet(hello_english)
+
+def get_greeting(where):
+    if where =='K':
+        return hello_korean
+    elif where == 'E':
+        return hello_english
+
+get_greeting('K')
+get_greeting('E')
+
+import math
+def stddev(*args):
+    def mean(): #중첩함수
+        return sum(args)/len(args)
+
+    def variance(m):
+        total = 0
+        for arg in args:
+            total += (arg - m) ** 2
+        return total/(len(args)-1)
         
-    return print(result)
+    v = variance(mean())
+    return print(math.sqrt(v))
 
-def print_string(text,count):
-    for i in range(count):
-        print(text)
+stddev(2.3,1.7,1.3,0.7,1.8)
 
-def print_string2(text,count=1): #매개변수 값을 지정해주면 기본값이 된다
-    for i in range(count):
-        print(text)
+## 파이썬은 pass 키워드를 이용해 빈 함수나 클래스를 만들수 있다
+def ex():
+    pass
 
-def print_personnel(name,position ='staff',nationality='Korea'): #키워드 매개변수
-    print('name = {0}'.format(name))
-    print('position = {0}'.format(position))
-    print('nationality = {0}'.format(nationality))
-
-def merge_string(*text_list): #가변매개변수 *변수 개수가 유동적이다
-    result=''
-    for s in text_list:
-        result+=s
-    return print(result)
-
-def print_team(**player): # 가변매개변수에서 *을 하나더 붙이면 딕셔너리 가변매개변수가 된다 (키와 값)
-    for k in player:
-        print('{0} = {1}'.format(k,player[k]))
-
-my_abs(-1)
-my_abs(2)
-print('\n')
-print_string('안녕하세요',3)
-print('\n')
-print_string2('반가워요') #count 매개변수를 입력하지 않으면 기본값으로 적용
-print('\n')
-print_personnel('MinGyu') #name만 지정후 나머지 변수 기본값
-print('-----------------')
-print_personnel('MinGyu',position='manager') #name,position 지정후 nationality 기본값
-print('-----------------')
-print_personnel('MinGyu',nationality='USA') #name,nationality지정후 position 기본값
-print('\n')
-merge_string('아버지가','방에','들어','가신다') #문자열 이어주기
-print_team(카시야스='GK',호날두='FW',알론소='MF',페페='DF') #ex(key='value')
+class empty_class:
+    pass 
