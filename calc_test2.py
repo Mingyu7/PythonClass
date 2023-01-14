@@ -11,5 +11,5 @@ print(minus(10,5))
 print(mul(2,5))
 print(div(10,1)) # from calculator import div 하지 않아서 실행안됨
 
-# from calculator import c
+# from calculator import c 
 # print(c.plus(1,2))
