@@ -1,5 +1,5 @@
 class MyRange:
-    def __init_(self,start,end):
+    def __init__(self,start,end):
         self.current=start
         self.end=end
     def __iter__(self):
@@ -12,5 +12,5 @@ class MyRange:
         else:
             raise StopIteration()
 
-for i in MyRange(0,5): #0~5까지 출력
+for i in MyRange(0,5): 
     print(i)
