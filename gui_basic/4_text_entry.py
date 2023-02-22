@@ -23,7 +23,7 @@ def btncmd1():
     txt.delete("1.0",END)
     e.delete(0,END)
 
-btn = Button(root,text="클릭",command=btncmd)
+btn = Button(root,text="출력",command=btncmd)
 btn.pack()
 btn1 = Button(root,text="삭제",command=btncmd1)
 btn1.pack()
